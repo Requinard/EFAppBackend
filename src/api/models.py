@@ -12,6 +12,9 @@ class TimeStampedModel(models.Model):
         self.last_edited = datetime.now()
         super().save()
 
+    class Meta:
+        abstract = True
+
 
 class Device(TimeStampedModel):
     type = models.IntegerField(choices=(
